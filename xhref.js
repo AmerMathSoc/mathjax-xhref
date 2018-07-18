@@ -15,7 +15,7 @@
  */
 
 MathJax.Extension['TeX/xhref'] = {
-  version: '1.0.0'
+  version: '1.0.1'
 };
 
 MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
@@ -38,7 +38,8 @@ MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
     //  Implements \xhref[type]{url}{math} with 2px padding
     //
     xhref: function(name) {
-      var url = this.GetArgument(name),
+      var type = this.GetBrackets(name),
+        url = this.GetArgument(name),
         arg = this.GetArgumentMML(name);
       arg = MML
         .mpadded(arg)
