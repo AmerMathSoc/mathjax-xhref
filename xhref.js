@@ -35,7 +35,7 @@ MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
 
   TEX.Parse.Augment({
     //
-    //  Implements \xhref[type]{url}{math} with 2px padding
+    //  Implements \xhref[type]{url}{math} with extra padding
     //
     xhref: function(name) {
       var type = this.GetBrackets(name),
@@ -49,15 +49,15 @@ MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
           attrNames: [
             'data-jats',
             'href',
-            'width',
             'height',
             'depth',
+            'width',
             'lspace'
           ],
-          width: '+10px',
-          height: '+5px',
-          depth: '+5px',
-          lspace: '5px'
+          height: '+4px',
+          depth: '+4px',
+          width: '+4px',
+          lspace: '2px'
         });
       this.Push(arg);
     },
