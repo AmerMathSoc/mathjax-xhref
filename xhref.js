@@ -45,9 +45,9 @@ MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
         .mpadded(arg)
         .With({
           href: url,
-          attr: { 'data-jats': type },
+          attr: { 'data-ams-ref': type },
           attrNames: [
-            'data-jats',
+            'data-ams-ref',
             'href',
             'height',
             'depth',

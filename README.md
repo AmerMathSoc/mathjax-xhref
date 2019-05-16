@@ -10,4 +10,4 @@ This extension implements a TeX macro `\xhref`.
 
     \xhref[type]{url}{content}
 
-In the output, this will generate an `<a href="url" data-jats="type">` and additionally put `5px` padding around the child expression (using MathML's `mpadded`).
+In the output, this will generate an `<a href="url" data-ams-ref="type">` and additionally put `5px` padding around the child expression (using MathML's `mpadded`).
