@@ -14,69 +14,47 @@
  *  limitations under the License.
  */
 
-MathJax.Extension['TeX/xhref'] = {
-  version: '1.0.1'
+const NodeUtil_js_1 = require('mathjax/js/input/tex/NodeUtil.js');
+const Configuration_js_1 = require('mathjax/js/input/tex/Configuration.js');
+const SymbolMap_js_1 = require('mathjax/js/input/tex/SymbolMap.js');
+
+const Xhref = function (parser, name) {
+  const type = parser.GetBrackets(name);
+  const url = parser.GetArgument(name);
+  const arg = GetArgumentMML(parser, name);
+  let mpadded = parser.create('node', 'mpadded', [arg], {
+    height: '+4px',
+    depth: '+4px',
+    width: '+4px',
+    lspace: '2px',
+    href: url,
+    'data-ams-ref': type,
+  });
+  parser.Push(mpadded);
+};
+const GetArgumentMML = function (parser, name) {
+  const arg = parser.ParseArg(name);
+  if (!NodeUtil_js_1.default.isInferred(arg)) {
+    return arg;
+  }
+  const children = NodeUtil_js_1.default.getChildren(arg);
+  if (children.length === 1) {
+    return children[0];
+  }
+  const mrow = parser.create('node', 'mrow');
+  NodeUtil_js_1.default.copyChildren(arg, mrow);
+  NodeUtil_js_1.default.copyAttributes(arg, mrow);
+  return mrow;
 };
 
-MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-  var TEX = MathJax.InputJax.TeX,
-    MML = MathJax.ElementJax.mml;
-  var TEXDEF = TEX.Definitions;
-
-  TEXDEF.Add(
-    {
-      macros: {
-        xhref: 'xhref'
-      }
-    },
-    null,
-    true
-  );
-
-  TEX.Parse.Augment({
-    //
-    //  Implements \xhref[type]{url}{math} with extra padding
-    //
-    xhref: function(name) {
-      var type = this.GetBrackets(name),
-        url = this.GetArgument(name),
-        arg = this.GetArgumentMML(name);
-      arg = MML
-        .mpadded(arg)
-        .With({
-          href: url,
-          attr: { 'data-ams-ref': type },
-          attrNames: [
-            'data-ams-ref',
-            'href',
-            'height',
-            'depth',
-            'width',
-            'lspace'
-          ],
-          height: '+4px',
-          depth: '+4px',
-          width: '+4px',
-          lspace: '2px'
-        });
-      this.Push(arg);
-    },
-    //
-    //  returns an argument that is a single MathML element
-    //  (in an mrow if necessary)
-    //
-    GetArgumentMML: function(name) {
-      var arg = this.ParseArg(name);
-      if (arg.inferred && arg.data.length == 1) {
-        arg = arg.data[0];
-      } else {
-        delete arg.inferred;
-      }
-      return arg;
-    }
-  });
-
-  MathJax.Hub.Startup.signal.Post('TeX HTML Ready');
+//  Implements \xhref[type]{url}{math} with extra padding
+new SymbolMap_js_1.CommandMap(
+  'xhref',
+  {
+    xhref: 'Xhref',
+  },
+  { Xhref }
+);
+exports.HtmlConfiguration = Configuration_js_1.Configuration.create('xhref', {
+  handler: { macro: ['xhref'] },
 });
-
-MathJax.Callback.Queue(['loadComplete', MathJax.Ajax, '[xhref]/xhref.js']);
