@@ -55,6 +55,6 @@ new SymbolMap.CommandMap(
   },
   { Xhref }
 );
-exports.HtmlConfiguration = Configuration.Configuration.create('xhref', {
+exports.configuration = Configuration.Configuration.create('xhref', {
   handler: { macro: ['xhref'] },
 });
