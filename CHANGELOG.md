@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.0.0...v3.0.1) (2020-10-06)
+
+
+### Bug Fixes
+
+* correct export ([bf866b1](https://github.com/AmerMathSoc/mathjax-xhref/commit/bf866b1070d0a2d4ca2ce03154aaf6b05610d07c)), closes [#6](https://github.com/AmerMathSoc/mathjax-xhref/issues/6)
+* correct imports ([2a12d35](https://github.com/AmerMathSoc/mathjax-xhref/commit/2a12d35fe4a9b53102998b2be4ce5fe4a6f44e74)), closes [#7](https://github.com/AmerMathSoc/mathjax-xhref/issues/7)
+
 ## [3.0.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.0.0-alpha.0...v3.0.0) (2020-09-10)
 
 ## 3.0.0-alpha.0 (2020-09-10)
