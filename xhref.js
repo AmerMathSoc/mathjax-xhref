@@ -14,9 +14,9 @@
  *  limitations under the License.
  */
 
-const NodeUtil_js_1 = require('mathjax/js/input/tex/NodeUtil.js');
-const Configuration_js_1 = require('mathjax/js/input/tex/Configuration.js');
-const SymbolMap_js_1 = require('mathjax/js/input/tex/SymbolMap.js');
+const NodeUtil_js_1 = require('mathjax-full/js/input/tex/NodeUtil.js');
+const Configuration_js_1 = require('mathjax-full/js/input/tex/Configuration.js');
+const SymbolMap_js_1 = require('mathjax-full/js/input/tex/SymbolMap.js');
 
 const Xhref = function (parser, name) {
   const type = parser.GetBrackets(name);
