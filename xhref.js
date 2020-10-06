@@ -14,9 +14,9 @@
  *  limitations under the License.
  */
 
-const NodeUtil_js_1 = require('mathjax-full/js/input/tex/NodeUtil.js');
-const Configuration_js_1 = require('mathjax-full/js/input/tex/Configuration.js');
-const SymbolMap_js_1 = require('mathjax-full/js/input/tex/SymbolMap.js');
+const NodeUtil = require('mathjax-full/js/input/tex/NodeUtil.js');
+const Configuration = require('mathjax-full/js/input/tex/Configuration.js');
+const SymbolMap = require('mathjax-full/js/input/tex/SymbolMap.js');
 
 const Xhref = function (parser, name) {
   const type = parser.GetBrackets(name);
@@ -34,27 +34,27 @@ const Xhref = function (parser, name) {
 };
 const GetArgumentMML = function (parser, name) {
   const arg = parser.ParseArg(name);
-  if (!NodeUtil_js_1.default.isInferred(arg)) {
+  if (!NodeUtil.default.isInferred(arg)) {
     return arg;
   }
-  const children = NodeUtil_js_1.default.getChildren(arg);
+  const children = NodeUtil.default.getChildren(arg);
   if (children.length === 1) {
     return children[0];
   }
   const mrow = parser.create('node', 'mrow');
-  NodeUtil_js_1.default.copyChildren(arg, mrow);
-  NodeUtil_js_1.default.copyAttributes(arg, mrow);
+  NodeUtil.default.copyChildren(arg, mrow);
+  NodeUtil.default.copyAttributes(arg, mrow);
   return mrow;
 };
 
 //  Implements \xhref[type]{url}{math} with extra padding
-new SymbolMap_js_1.CommandMap(
+new SymbolMap.CommandMap(
   'xhref',
   {
     xhref: 'Xhref',
   },
   { Xhref }
 );
-exports.HtmlConfiguration = Configuration_js_1.Configuration.create('xhref', {
+exports.HtmlConfiguration = Configuration.Configuration.create('xhref', {
   handler: { macro: ['xhref'] },
 });
