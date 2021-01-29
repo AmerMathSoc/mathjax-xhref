@@ -19,6 +19,7 @@ exports.configuration = void 0;
 var NodeUtil_js_1 = require("mathjax-full/js/input/tex/NodeUtil.js");
 var Configuration_js_1 = require("mathjax-full/js/input/tex/Configuration.js");
 var SymbolMap_js_1 = require("mathjax-full/js/input/tex/SymbolMap.js");
+var TextMacrosConfiguration_1 = require("mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration");
 var GetArgumentMML = function (parser, name) {
     var arg = parser.ParseArg(name);
     if (!NodeUtil_js_1.default.isInferred(arg)) {
@@ -51,6 +52,7 @@ xhrefMethods.xhref = function (parser, name) {
 new SymbolMap_js_1.CommandMap('xhref-macros', {
     xhref: 'xhref',
 }, xhrefMethods);
+TextMacrosConfiguration_1.textBase.handler.macro.unshift('xhref-macros');
 exports.configuration = Configuration_js_1.Configuration.create('xhref', {
     handler: {
         macro: ['xhref-macros'],
