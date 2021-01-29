@@ -27,6 +27,6 @@
   },
   "scripts": {
     "release": "standard-version",
-    "test": "node test/base.js > test/test.html"
+    "test": "node test/base.js"
   }
 }
