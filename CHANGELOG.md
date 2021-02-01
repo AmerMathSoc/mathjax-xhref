@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.0.1...v3.1.0) (2021-02-01)
+
+
+### Features
+
+* port to typescript ([7828f71](https://github.com/AmerMathSoc/mathjax-xhref/commit/7828f71138b4c17cf403265ec7bacfd7a5f666c8)), closes [#9](https://github.com/AmerMathSoc/mathjax-xhref/issues/9)
+* support text mode ([23c9035](https://github.com/AmerMathSoc/mathjax-xhref/commit/23c9035e1b7f0716f6ad9ab54a77221ad14ed210)), closes [#8](https://github.com/AmerMathSoc/mathjax-xhref/issues/8)
+
 ### [3.0.1](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.0.0...v3.0.1) (2020-10-06)
 
 
