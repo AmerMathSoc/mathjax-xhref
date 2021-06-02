@@ -52,7 +52,7 @@ xhrefMethods.xhref = function (parser, name) {
 new SymbolMap_js_1.CommandMap('xhref-macros', {
     xhref: 'xhref',
 }, xhrefMethods);
-TextMacrosConfiguration_1.textBase.handler.macro.unshift('xhref-macros');
+TextMacrosConfiguration_1.TextBaseConfiguration.handler.macro.unshift('xhref-macros');
 exports.configuration = Configuration_js_1.Configuration.create('xhref', {
     handler: {
         macro: ['xhref-macros'],
