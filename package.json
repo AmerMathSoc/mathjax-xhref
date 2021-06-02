@@ -21,12 +21,13 @@
     "url": "https://github.com/AmerMathSoc/mathjax-xhref/issues"
   },
   "devDependencies": {
-    "mathjax-full": "^3.1.2",
-    "standard-version": "^9.1.0",
-    "typescript": "^3.9.7"
+    "mathjax-full": "github:amermathsoc/MathJax-src#500ec0e5028dff9cc22f12441bc097fe8c59dce4",
+    "standard-version": "^9.3.0",
+    "typescript": "^4.3.2"
   },
   "scripts": {
     "release": "standard-version",
+    "pretest": "npx tsc",
     "test": "node test/base.js"
   }
 }

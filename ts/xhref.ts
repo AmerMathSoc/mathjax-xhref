@@ -19,7 +19,7 @@ import { Configuration } from 'mathjax-full/js/input/tex/Configuration.js';
 import { CommandMap } from 'mathjax-full/js/input/tex/SymbolMap.js';
 import { ParseMethod } from 'mathjax-full/js/input/tex/Types.js';
 import TexParser from 'mathjax-full/js/input/tex/TexParser';
-import { textBase } from 'mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration';
+import { TextBaseConfiguration } from 'mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration';
 
 const GetArgumentMML = function (parser: TexParser, name: string) {
     const arg = parser.ParseArg(name);
@@ -62,7 +62,7 @@ new CommandMap(
     xhrefMethods
 );
 
-textBase.handler.macro.unshift('xhref-macros');
+TextBaseConfiguration.handler.macro.unshift('xhref-macros');
 
 export const configuration = Configuration.create('xhref', {
     handler: {
