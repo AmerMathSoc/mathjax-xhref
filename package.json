@@ -1,7 +1,7 @@
 {
   "name": "mathjax-xhref",
   "main": "./js/xhref.js",
-  "version": "3.1.1",
+  "version": "3.1.2",
   "description": "A custom href extension for MathJax's TeX input",
   "keywords": [
     "MathJax",

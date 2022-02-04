@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.1.2](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.1.1...v3.1.2) (2022-02-04)
+
+
+### Bug Fixes
+
+* add mathjax-full as peer dependency ([c17e578](https://github.com/AmerMathSoc/mathjax-xhref/commit/c17e57831551b993a42d326db107e4a5eb759b6c))
+
 ### [3.1.1](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.1.0...v3.1.1) (2021-06-02)
 
 
