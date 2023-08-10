@@ -1,17 +1,14 @@
-const { mathjax } = require('mathjax-full/js/mathjax.js');
-const { TeX } = require('mathjax-full/js/input/tex.js');
-const { SVG } = require('mathjax-full/js/output/svg.js');
-const { liteAdaptor } = require('mathjax-full/js/adaptors/liteAdaptor.js');
-const { RegisterHTMLHandler } = require('mathjax-full/js/handlers/html.js');
+import { mathjax } from 'mathjax-full/js/mathjax.js';
+import { TeX } from 'mathjax-full/js/input/tex.js';
+import { SVG } from 'mathjax-full/js/output/svg.js';
+import { liteAdaptor } from 'mathjax-full/js/adaptors/liteAdaptor.js';
+import { RegisterHTMLHandler } from 'mathjax-full/js/handlers/html.js';
 
-const {
+import {
   BaseConfiguration,
-} = require('mathjax-full/js/input/tex/base/BaseConfiguration.js');
-const {
-  textBase,
-} = require('mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration.js'); // NOTE no name cf. mathjax/MathJax#2623
+} from 'mathjax-full/js/input/tex/base/BaseConfiguration.js';
 
-const xhref = require('../js/xhref.js').configuration;
+import {configuration as xhref} from '../js/xhref.js';
 
 const adaptor = liteAdaptor();
 RegisterHTMLHandler(adaptor);
@@ -26,7 +23,7 @@ const svg = new SVG({
   displayIndent: '0',
 });
 
-module.exports = (documentstring) => {
+export const mj = (documentstring) => {
   const mj = mathjax.document(documentstring, {
     InputJax: tex,
     OutputJax: svg,
