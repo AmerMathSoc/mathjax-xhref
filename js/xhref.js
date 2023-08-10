@@ -1,4 +1,3 @@
-"use strict";
 /*!
  *  Copyright (c) 2020 American Mathematical Society
  *
@@ -14,32 +13,30 @@
  *  See the License for the specific language governing permissions and
  *  limitations under the License.
  */
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.configuration = void 0;
-var NodeUtil_js_1 = require("mathjax-full/js/input/tex/NodeUtil.js");
-var Configuration_js_1 = require("mathjax-full/js/input/tex/Configuration.js");
-var SymbolMap_js_1 = require("mathjax-full/js/input/tex/SymbolMap.js");
-var TextMacrosConfiguration_1 = require("mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration");
-var GetArgumentMML = function (parser, name) {
-    var arg = parser.ParseArg(name);
-    if (!NodeUtil_js_1.default.isInferred(arg)) {
+import NodeUtil from 'mathjax-full/js/input/tex/NodeUtil.js';
+import { Configuration } from 'mathjax-full/js/input/tex/Configuration.js';
+import { CommandMap } from 'mathjax-full/js/input/tex/SymbolMap.js';
+import { TextBaseConfiguration } from 'mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration.js';
+const GetArgumentMML = function (parser, name) {
+    const arg = parser.ParseArg(name);
+    if (!NodeUtil.isInferred(arg)) {
         return arg;
     }
-    var children = NodeUtil_js_1.default.getChildren(arg);
+    const children = NodeUtil.getChildren(arg);
     if (children.length === 1) {
         return children[0];
     }
-    var mrow = parser.create('node', 'mrow');
-    NodeUtil_js_1.default.copyChildren(arg, mrow);
-    NodeUtil_js_1.default.copyAttributes(arg, mrow);
+    const mrow = parser.create('node', 'mrow');
+    NodeUtil.copyChildren(arg, mrow);
+    NodeUtil.copyAttributes(arg, mrow);
     return mrow;
 };
-var xhrefMethods = {};
+let xhrefMethods = {};
 xhrefMethods.xhref = function (parser, name) {
-    var type = parser.GetBrackets(name);
-    var url = parser.GetArgument(name);
-    var arg = GetArgumentMML(parser, name);
-    var mpadded = parser.create('node', 'mpadded', [arg], {
+    const type = parser.GetBrackets(name);
+    const url = parser.GetArgument(name);
+    const arg = GetArgumentMML(parser, name);
+    let mpadded = parser.create('node', 'mpadded', [arg], {
         height: '+4px',
         depth: '+4px',
         width: '+4px',
@@ -49,11 +46,11 @@ xhrefMethods.xhref = function (parser, name) {
     });
     parser.Push(mpadded);
 };
-new SymbolMap_js_1.CommandMap('xhref-macros', {
+new CommandMap('xhref-macros', {
     xhref: 'xhref',
 }, xhrefMethods);
-TextMacrosConfiguration_1.TextBaseConfiguration.handler.macro.unshift('xhref-macros');
-exports.configuration = Configuration_js_1.Configuration.create('xhref', {
+TextBaseConfiguration.handler.macro.unshift('xhref-macros');
+export const configuration = Configuration.create('xhref', {
     handler: {
         macro: ['xhref-macros'],
     },
