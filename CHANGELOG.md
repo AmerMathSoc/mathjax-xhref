@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.0.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.1.4...v4.0.0) (2023-08-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* ESM output only
+
+### Features
+
+* adjust for MathJax v4 and ESM ([e4e7faf](https://github.com/AmerMathSoc/mathjax-xhref/commit/e4e7faf33afea5f952a725d7ccc2c0fa83c814cf)), closes [#14](https://github.com/AmerMathSoc/mathjax-xhref/issues/14)
+
 ### [3.1.4](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.1.3...v3.1.4) (2023-07-31)
 
 
