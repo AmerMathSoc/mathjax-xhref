@@ -4,17 +4,19 @@ import { SVG } from 'mathjax-full/js/output/svg.js';
 import { liteAdaptor } from 'mathjax-full/js/adaptors/liteAdaptor.js';
 import { RegisterHTMLHandler } from 'mathjax-full/js/handlers/html.js';
 
-import {
-  BaseConfiguration,
-} from 'mathjax-full/js/input/tex/base/BaseConfiguration.js';
+import { BaseConfiguration } from 'mathjax-full/js/input/tex/base/BaseConfiguration.js'; // 
 
-import {configuration as xhref} from '../js/xhref.js';
+import { configuration as xhref } from '../js/xhref.js';
+import { TextMacrosConfiguration as textmacros } from 'mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration.js';
 
 const adaptor = liteAdaptor();
 RegisterHTMLHandler(adaptor);
 
 const tex = new TeX({
-  packages: [BaseConfiguration.name, 'textmacros', xhref.name], // NOTE 'textmacros', cf note above on
+  packages: [BaseConfiguration.name, textmacros.name, xhref.name],
+  textmacros: {
+    packages: {'[+]': [xhref.name]}
+  }
 });
 
 const svg = new SVG({

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <title>Test of mathjax-xhref</title>
+   <script>
+      MathJax = {
+         loader: {
+            load: ['[test]/xhref.js', '[tex]/textmacros'],
+            paths: { test: '../browser' }
+         },
+         tex: {
+            packages: { '[+]': ['textmacros', 'xhref'] },
+            textmacros: {
+               packages: { '[+]': ['xhref'] }
+            }
+         }
+      };
+   </script>
+   <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-chtml.js">
+      </script>
+
+
+</head>
+
+<body>
+   <h1>mathjax-xhref test</h1>
+
+   $$ \xhref[type]{https://example.com}{x=y}$$
+   $$ \text{\xhref[type]{https://example.com}{x=y}} $$
+
+
+</body>
+
+</html>
