@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [4.1.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v4.0.0...v4.1.0) (2023-11-08)
+
+
+### Features
+
+* add client-side build ([5baa7c5](https://github.com/AmerMathSoc/mathjax-xhref/commit/5baa7c5a52331db474f4b29c27d3ded4aa767d5b)), closes [#15](https://github.com/AmerMathSoc/mathjax-xhref/issues/15)
+
+
+### Bug Fixes
+
+* adjust to mathjax v4.0.0-beta.4 ([344f515](https://github.com/AmerMathSoc/mathjax-xhref/commit/344f515bc96afd8326e7e042cb85a9ad70902747)), closes [#17](https://github.com/AmerMathSoc/mathjax-xhref/issues/17)
+* remove hacky textmacros  extension ([7230fff](https://github.com/AmerMathSoc/mathjax-xhref/commit/7230fff0f2c9077ad26bdbc09f6bf6490e580dda)), closes [#17](https://github.com/AmerMathSoc/mathjax-xhref/issues/17)
+
 ## [4.0.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v3.1.4...v4.0.0) (2023-08-10)
 
 
