@@ -16,7 +16,7 @@
 
 import NodeUtil from 'mathjax-full/js/input/tex/NodeUtil.js';
 import { Configuration } from 'mathjax-full/js/input/tex/Configuration.js';
-import { CommandMap } from 'mathjax-full/js/input/tex/SymbolMap.js';
+import { CommandMap } from 'mathjax-full/js/input/tex/TokenMap.js';
 import { ParseMethod } from 'mathjax-full/js/input/tex/Types.js';
 import TexParser from 'mathjax-full/js/input/tex/TexParser.js';
 import { TextBaseConfiguration } from 'mathjax-full/js/input/tex/textmacros/TextMacrosConfiguration.js';
