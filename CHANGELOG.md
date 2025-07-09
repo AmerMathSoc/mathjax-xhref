@@ -1,6 +1,22 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+## [5.0.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v4.1.0...v5.0.0) (2025-07-09)
+
+
+### ⚠ BREAKING CHANGES
+
+* switches from mathjax-full to @mathjax/src package.
+
+### Features
+
+* upgrade and adjust to mathjax v4.0.0-rc.4 ([d63cca9](https://github.com/AmerMathSoc/mathjax-xhref/commit/d63cca95fa52735d7531cc70e98f01ebece25e91)), closes [#19](https://github.com/AmerMathSoc/mathjax-xhref/issues/19)
+
+
+### Bug Fixes
+
+* **package:** switch to commit-and-tag-version ([4121967](https://github.com/AmerMathSoc/mathjax-xhref/commit/4121967389744cd6d6a1964ea478da3fffdc3722))
 
 ## [4.1.0](https://github.com/AmerMathSoc/mathjax-xhref/compare/v4.0.0...v4.1.0) (2023-11-08)
 
