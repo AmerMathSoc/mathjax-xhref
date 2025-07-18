@@ -2,7 +2,7 @@
   "name": "@AmerMathSoc/mathjax-href",
   "main": "./js/xhref.js",
   "type": "module",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "A custom href extension for MathJax's TeX input",
   "keywords": [
     "MathJax",
