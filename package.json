@@ -1,5 +1,5 @@
 {
-  "name": "@amermathsoc/mathjax-href",
+  "name": "@amermathsoc/mathjax-xhref",
   "main": "./js/xhref.js",
   "type": "module",
   "version": "5.1.1",
