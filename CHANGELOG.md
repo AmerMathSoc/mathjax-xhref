@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [5.1.2](https://github.com/AmerMathSoc/mathjax-xhref/compare/v5.1.1...v5.1.2) (2025-10-09)
+
+
+### Bug Fixes
+
+* **package:** typo in package name ([b1caf2e](https://github.com/AmerMathSoc/mathjax-xhref/commit/b1caf2e31cebe5ed8d3eba8b334bd24ec4785cf0)), closes [#21](https://github.com/AmerMathSoc/mathjax-xhref/issues/21)
+
 ## [5.1.1](https://github.com/AmerMathSoc/mathjax-xhref/compare/v5.1.0...v5.1.1) (2025-07-18)
 
 
